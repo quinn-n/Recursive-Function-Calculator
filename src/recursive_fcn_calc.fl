@@ -1,0 +1,88 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0305
+header_name {.h}
+code_name {.cxx}
+declblock {\#ifndef RECURSIVE_FCN_CALC_H} {open public after {\#endif}
+} {
+  decl {\#define RECURSIVE_FCN_CALC_H} {private local
+  }
+  Function {make_window()} {
+    comment {Creates main window} open
+  } {
+    Fl_Window main_win {
+      label {Recursive Function Calculator}
+      comment {	} open
+      tooltip {Calculator able to calculate the result of recursive functions} xywh {1369 164 545 730} type Double resizable visible
+    } {
+      Fl_Input statement_input {
+        tooltip {Statement input} xywh {5 671 535 24} labeltype NO_LABEL align 132 when 1
+      }
+      Fl_Output output_preview {
+        tooltip {Output preview} xywh {5 702 395 23} labeltype NO_LABEL
+      }
+      Fl_Output history_output {
+        tooltip History xywh {5 32 535 633} type Multiline labeltype NO_LABEL align 5
+      }
+      Fl_Return_Button calc_btn {
+        label Calc
+        tooltip {Calculate result} xywh {405 700 135 25}
+      }
+      Fl_Button add_fcn_btn {
+        label {New Function}
+        tooltip {Create a new function} xywh {5 5 105 25}
+      }
+      Fl_Button view_fcns_btn {
+        label {View Functions}
+        tooltip {View currently defined functions} xywh {425 5 114 25}
+      }
+    }
+  }
+  Function {make_fcn_window()} {
+    comment {Creates function add window} open
+  } {
+    Fl_Window add_fcn_win {
+      label {Add Function} open selected
+      tooltip {Add a function to the calculator} xywh {1284 353 630 375} type Double resizable visible
+    } {
+      Fl_Input fcn_input {
+        label Function
+        tooltip {Function input} xywh {65 1 560 24}
+      }
+      Fl_Input base_case_input {
+        label {Base Cases}
+        tooltip {Base cases for a recursive function, separated by newlines} xywh {85 31 540 122} type Multiline
+      }
+      Fl_Input restriction_input {
+        label {Input Restrictions}
+        tooltip {Input restrictions, separated by newlines} xywh {130 155 496 163} type Multiline
+      }
+      Fl_Button cancel_fcn_btn {
+        label Cancel
+        tooltip {Cancel adding new function} xywh {5 325 175 45}
+      }
+      Fl_Return_Button fcn_confirm_btn {
+        label Confirm
+        tooltip {Confirm new function} xywh {399 325 226 45}
+      }
+    }
+  }
+  Function {make_view_fcn_window()} {open
+  } {
+    Fl_Window view_fcn_win {
+      label {View Functions} open
+      tooltip {Click on a function to edit it} xywh {576 67 545 730} type Double resizable visible
+    } {
+      Fl_Button fcn_view_back_btn {
+        label Back
+        tooltip {Return to the calculator window} xywh {5 700 64 25}
+      }
+      Fl_Button view_fcns_add_fcn_btn {
+        label {New Function}
+        tooltip {Add a new function} xywh {435 700 105 25}
+      }
+      Fl_Pack view_fcns_pack {open
+        tooltip {Click on a function to edit it} xywh {5 5 535 690}
+      } {}
+    }
+  }
+}
